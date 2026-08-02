@@ -81,3 +81,45 @@ Testcase Output
 0
 Explanation
 Path scores: employee1=0, 2=5, 3=-2, 4=8, 5=-1, 6=2. Subtree(1) = everyone, max=8 (emp 4), min=-2 (emp 3), spread=10. Subtree(2) = {2,4,5} with scores {5,8,-1}, max=8, min=-1, spread=9. Subtree(3) = {3,6} with scores {-2,2}, spread=4. Subtree(4) = {4} alone, spread=0.
+
+Sample 2
+
+Tree:
+
+        1
+      /   \
+   +5/     \-2
+    2       3
+   / \       \
+ +3  -6      +4
+ 4     5      6
+
+Path Scores:
+
+1 = 0
+2 = 5
+3 = -2
+4 = 8
+5 = -1
+6 = 2
+Subtree(1) = {1,2,3,4,5,6}
+Scores = {0,5,-2,8,-1,2}
+Max = 8, Min = -2
+Spread = 10
+Subtree(2) = {2,4,5}
+Scores = {5,8,-1}
+Max = 8, Min = -1
+Spread = 9
+Subtree(3) = {3,6}
+Scores = {-2,2}
+Max = 2, Min = -2
+Spread = 4
+Subtree(4) = {4}
+Spread = 0
+What the problem is asking
+Compute the pathScore of every node from the root.(one node at a time then its children, grandchildren, etc.)
+For every node, find the minimum and maximum pathScore inside its subtree.
+Store spread = max - min.
+For each query, simply print the stored spread of that node.
+
+In simple words: Each node asks, "Among me and all my descendants, how far apart are the highest and lowest path scores?" That difference is the answer.
