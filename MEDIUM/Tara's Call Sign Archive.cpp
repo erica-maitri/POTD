@@ -51,3 +51,19 @@ int main()
 
     return 0;
 }
+
+/*
+Time Complexity
+
+O(N × L² × log N)
+
+N = number of call signs
+L = maximum length of a call sign (≤ 20)
+We check all prefixes and use set lookup.
+Space Complexity
+
+O(N × L)
+
+Stores all unique call signs in the set.
+Total input length is at most 2 × 10⁵.
+*/
