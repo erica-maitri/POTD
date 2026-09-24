@@ -102,3 +102,17 @@ int main() {
 
     return 0;
 }
+
+/*
+Time Complexity
+
+O((n + m) log n) approximately.
+
+find() / DSU operations: almost O(1) amortized.
+CLAIM: O(log n) for priority queue.
+LINK: merging priority queues takes O(log n) per moved relic, with small-to-large merging.
+Overall: O((n + m) log n).
+Space Complexity
+
+O(n) — DSU arrays and priority queues store at most n relics.
+*/
